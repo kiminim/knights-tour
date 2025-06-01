@@ -1,8 +1,17 @@
 html {
-  color-scheme: light dark;
-  font-family: system-ui;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
+	color-scheme: light dark;
+	font-family: system-ui;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+}
+
+.board {
+	display: grid;
+}
+
+.square {
+	height: 100px;
+	width: 100px;
 }
