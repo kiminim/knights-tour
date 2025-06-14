@@ -6,14 +6,22 @@ const DEFAULT_SIZE = 5;
 
 export function App() {
 	const [boardSize, setBoardSize] = useState(DEFAULT_SIZE);
+	const [pendingSize, setPendingSize] = useState(DEFAULT_SIZE);
 	const [showNumbers, setShowNumbers] = useState(true);
 	const [resetCounter, setResetCounter] = useState(0);
 
-	const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-		if (e.target.valueAsNumber) {
-			setBoardSize(e.target.valueAsNumber);
-		}
+	const handleSizeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+		const value = e.target.valueAsNumber;
+		if (!isNaN(value)) setPendingSize(value);
 	};
+
+	// Apply the pending size only when user confirms
+	const applySizeChange = () => {
+		const clamped = Math.max(5, Math.min(10, pendingSize));
+		setPendingSize(clamped);
+		setBoardSize(clamped);
+	};
+
 	const handleClick = () => {
 		setShowNumbers((prev) => !prev);
 	};
@@ -29,11 +37,14 @@ export function App() {
 			<input
 				type="number"
 				id="board-size"
-				defaultValue={DEFAULT_SIZE}
-				onChange={(e) => handleInput(e)}
+				min={5}
+				max={10}
+				value={pendingSize}
+				onChange={handleSizeInput}
 			/>
+			<button onClick={applySizeChange}>Set board size</button>
 			<button id="show-numbers" onClick={handleClick}>
-				Show numbers
+				{showNumbers ? 'Hide numbers' : 'Show numbers'}
 			</button>
 			<button id="reset-board" onClick={handleReset}>
 				Reset board
