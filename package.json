@@ -1,11 +1,11 @@
 {
-	"name": "parcel-react-client-starter",
+	"name": "knights-tour",
 	"private": true,
 	"version": "0.0.0",
 	"source": "src/index.html",
 	"scripts": {
 		"start": "parcel",
-		"build": "parcel build src/index.html --public-url https://kiminim.github.io/knights-tour/",
+		"build": "parcel build src/index.html --public-url ./",
 		"deploy": "gh-pages -d dist"
 	},
 	"dependencies": {
@@ -19,5 +19,5 @@
 		"parcel": "^2.14.0",
 		"prettier": "^3.5.3"
 	},
-	"homepage": "https:/kiminim.github.io/knights-tour"
+	"homepage": "https://kiminim.github.io/knights-tour"
 }
