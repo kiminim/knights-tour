@@ -1,0 +1,33 @@
+html {
+  color-scheme: light dark;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-family: system-ui;
+  display: flex;
+}
+
+.board {
+  display: grid;
+}
+
+.square {
+  border: 1px solid #ccc;
+  outline: none;
+  width: 100px;
+  height: 100px;
+  font-size: 1.2rem;
+}
+
+.game-over {
+  z-index: 1000;
+  background-color: #fff;
+  border: 2px solid #000;
+  padding: 2rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 10px #00000080;
+}
+/*# sourceMappingURL=knights-tour.9f367d21.css.map */
