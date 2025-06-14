@@ -16,9 +16,9 @@ export function Square({
 	size,
 }: SquareProps) {
 	const getColor = (value: number) => {
-		if (value !== 0) return 'lightgreen'; // visited
-		if (isHighlighted) return 'lightblue'; // next possible move
-		return 'white'; // default
+		if (value !== 0) return 'light-dark(lightgreen, #14532d)'; // visited
+		if (isHighlighted) return 'light-dark(lightblue, #1e40af)'; // next possible move
+		return 'light-dark(white, #1a1a1a)'; // default
 	};
 
 	return (
